@@ -8,6 +8,14 @@ function makeRows(rows, cols) {
       let cell = document.createElement("div");
       container.appendChild(cell).className = "item";
     };
-  };
+};
 
-  makeRows(16, 16)
+makeRows(16, 16)
+
+const cells = document.querySelectorAll(".item");
+
+cells.forEach(cell => {
+    cell.addEventListener("mouseover", function(){
+        cell.style.backgroundColor = "black";
+    });
+});
