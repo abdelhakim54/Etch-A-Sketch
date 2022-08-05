@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 20px;
 }
 
 h1{
@@ -23,9 +24,19 @@ h1{
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     border: 1px solid black;
+    width: 512px;
+    height: 512px;
 }
 
 .item {
     width: 16px;
     height: 16px;
+}
+
+button{
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: lightblue;
+    color: black;
+    font-weight: bold;
 }
