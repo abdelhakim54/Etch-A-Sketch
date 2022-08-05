@@ -1,7 +1,13 @@
 const container = document.querySelector(".container");
 
-for(let i = 0; i<16; i++){
-    let item = document.createElement("div");
-    item.classList.add("item");
-    container.appendChild(item);
-}
+//this function should be modify later
+function makeRows(rows, cols) {
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-cols', cols);
+    for (c = 0; c < (rows * cols); c++) {
+      let cell = document.createElement("div");
+      container.appendChild(cell).className = "item";
+    };
+  };
+
+  makeRows(16, 16)
