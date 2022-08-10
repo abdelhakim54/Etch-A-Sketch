@@ -1,9 +1,13 @@
 const container = document.querySelector(".container");
+
 const clearButton = document.querySelector("#clr");
+
 const dimScroll = document.querySelector("input[type=range]");
-
-
 const labelForDim = document.querySelector("label#dim");
+
+const colorButton = document.querySelector("input[type=color]");
+let hoverColor = "black";
+
 dimScroll.addEventListener("input", (e) => {
     const dim = e.target.value;
     labelForDim.textContent = `Dimension ${dim}x${dim}`
@@ -16,6 +20,11 @@ clearButton.addEventListener("click", clear)
 function clear(){
     document.querySelectorAll(".item").forEach(cell => cell.style.backgroundColor="White");
 }
+
+colorButton.addEventListener("input", (e) => {
+    hoverColor = e.target.value;
+    console.log(e.target.value)
+})
 
 function makeGrid(rows, cols) {
     container.textContent = "";
@@ -34,7 +43,7 @@ function addhover(){
     const cells = document.querySelectorAll(".item");
     cells.forEach(cell => {
     cell.addEventListener("mouseover", function(){
-    cell.style.backgroundColor = "black";
+    cell.style.backgroundColor = hoverColor;
     });
 });
 
