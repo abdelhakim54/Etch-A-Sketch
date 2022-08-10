@@ -2,4 +2,4 @@
 
 Eatch-A-Sketch created using Html, CSS, and JavaScript
 
-[live preview](https://abdelhakim54.github.io/Etch-A-Sketch/)point_left
+[live preview](https://abdelhakim54.github.io/Etch-A-Sketch/)
