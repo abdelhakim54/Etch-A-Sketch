@@ -9,13 +9,19 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <div class="container">
+    <div class="first">
+        <h1>Etch-A-Sketch</h1>
+        <div class="container">
 
+        </div>
     </div>
-    <div class="buttons">
-        <button class="dim">dimension</button>
-        <button class="clr">clear</button>
-    </div>
+        <form action="">
+            <label for="color" id="color">Pick a Color</label>
+            <input type="color" value="black"><br>
+            <label for="dimension" id="dim">Dimension 16x16</label>
+            <input type="range" min="1" max="50" value="16" step="1">
+            <label for="clr" ></label>
+            <input type="button" value="clear" id ="clr">
+        </form>  
 </body>
 </html>

@@ -1,16 +1,21 @@
 const container = document.querySelector(".container");
-const dimButton = document.querySelector(".dim");
-const clearButton = document.querySelector(".clr");
+const clearButton = document.querySelector("#clr");
+const dimScroll = document.querySelector("input[type=range]");
 
-dimButton.addEventListener("click", function(){
-    const dim = Number(prompt("enter your dimension (100 max)"));
-    makeGrid(dim, dim);
-    addhover();
-});
 
-clearButton.addEventListener("click", function(){
-    document.querySelectorAll(".item").forEach(cell => cell.style.backgroundColor="White");
+const labelForDim = document.querySelector("label#dim");
+dimScroll.addEventListener("input", (e) => {
+    const dim = e.target.value;
+    labelForDim.textContent = `Dimension ${dim}x${dim}`
+    main(dim, dim)
 })
+
+
+clearButton.addEventListener("click", clear)
+
+function clear(){
+    document.querySelectorAll(".item").forEach(cell => cell.style.backgroundColor="White");
+}
 
 function makeGrid(rows, cols) {
     container.textContent = "";
@@ -32,11 +37,11 @@ function addhover(){
     cell.style.backgroundColor = "black";
     });
 });
-}
 
-function dft(){ //the model to display by default
-    makeGrid(16,16);
+}
+function main(rows = dimScroll.value, cols=dimScroll.value){
+    makeGrid(rows, cols);
     addhover();
 }
 
-dft();
+main();
